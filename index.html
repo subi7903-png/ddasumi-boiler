@@ -635,6 +635,117 @@ body{
   }
 }
 
+
+/* v9 mobile navigation */
+.mobile-category-wrap{
+  display:none;
+}
+
+@media(max-width:640px){
+  /* 상단 로고 + 전화 버튼 유지 */
+  .nav-inner{
+    height:62px;
+    min-height:62px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+  }
+
+  .nav-cta{
+    display:flex !important;
+    align-items:center;
+    flex:0 0 auto;
+  }
+
+  .nav-cta .btn-outline{
+    display:none !important;
+  }
+
+  .nav-cta .btn-primary{
+    display:inline-flex !important;
+    min-height:38px;
+    padding:10px 12px;
+    border-radius:11px;
+    font-size:13px;
+    white-space:nowrap;
+    box-shadow:none;
+  }
+
+  .brand{
+    min-width:0;
+    flex:1 1 auto;
+    font-size:18px;
+    white-space:nowrap;
+  }
+
+  .brand-logo{
+    width:34px;
+    height:34px;
+    flex-basis:34px;
+  }
+
+  /* 데스크톱 메뉴는 숨기고, 모바일 전용 메뉴 표시 */
+  .menu{
+    display:none !important;
+  }
+
+  .mobile-category-wrap{
+    display:block;
+    border-top:1px solid #eef1f4;
+    background:rgba(255,255,255,.97);
+  }
+
+  .mobile-category-nav{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    overflow-x:auto;
+    padding-top:9px;
+    padding-bottom:9px;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .mobile-category-nav::-webkit-scrollbar{
+    display:none;
+  }
+
+  .mobile-category-nav a{
+    flex:0 0 auto;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:34px;
+    padding:8px 12px;
+    border:1px solid #e2e8f0;
+    border-radius:999px;
+    background:#fff;
+    color:#475569;
+    font-size:12px;
+    font-weight:800;
+    line-height:1;
+    white-space:nowrap;
+  }
+
+  .mobile-category-nav a:first-child{
+    color:var(--brand-dark);
+    border-color:#ffd6c7;
+    background:var(--brand-soft);
+  }
+
+  /* sticky header가 두 줄이 되어도 컨텐츠가 자연스럽게 보이도록 */
+  .nav{
+    position:sticky;
+    top:0;
+  }
+
+  /* 모바일 하단 고정바: 시공사례는 페이지 내부로, 전화는 즉시 연결 */
+  .mobile-bar{
+    display:flex;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -653,6 +764,16 @@ body{
     <div class="nav-cta">
       <a class="btn btn-outline" href="#case">시공사례 보기</a>
       <a class="btn btn-primary" href="tel:01047339517">☎ 010-4733-9517</a>
+    </div>
+  </div>
+  <div class="mobile-category-wrap">
+    <div class="container mobile-category-nav">
+      <a href="#case">시공사례</a>
+      <a href="#home-boiler">가정용 보일러</a>
+      <a href="#zone-control">각방제어·분배기</a>
+      <a href="#process">진행방법</a>
+      <a href="#faq">자주 묻는 질문</a>
+      <a href="https://blog.naver.com/ddasumi_bo" target="_blank" rel="noopener">네이버 블로그 ↗</a>
     </div>
   </div>
 </nav>
@@ -1095,7 +1216,7 @@ body{
 </footer>
 
 <div class="mobile-bar">
-  <a class="btn btn-outline" href="https://blog.naver.com/ddasumi_bo" target="_blank" rel="noopener">시공사례</a>
+  <a class="btn btn-outline" href="#case">시공사례</a>
   <a class="btn btn-primary" href="tel:01047339517">☎ 전화 상담</a>
 </div>
 
